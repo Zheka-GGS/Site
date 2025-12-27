@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Профессиональный ремонт и обслуживание компьютеров. Диагностика, апгрейд, удаление вирусов.">
+    <meta name="keywords" content="ремонт ПК, обслуживание компьютеров, диагностика, апгрейд, удаление вирусов">
+    <title>Команда по ремонту ПК</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="services.html">Услуги</a></li>
+            <li><a href="#about">О нас</a></li>
+            <li><a href="#contact">Контакты</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Добро пожаловать на сайт по ремонту ПК</h1>
+        <p>Мы специализируемся на ремонте и обслуживании компьютеров.</p>
+        <div class="hero-image">
+            <!-- Заглушка для изображения: <img src="hero.jpg" alt="Ремонт ПК"> -->
+            <p>Изображение (будет добавлено)</p>
+        </div>
+    </header>
+
+    <section id="about">
+        <h2>О нас</h2>
+        <p>Наша команда состоит из опытных специалистов, готовых помочь с любыми проблемами вашего ПК. Мы ремонтируем ноутбуки, стационарные компьютеры, заменяем компоненты и оптимизируем производительность.</p>
+        <p>С более чем 10 годами опыта, мы гарантируем качественный сервис и быструю диагностику.</p>
+    </section>
+
+    <section id="services-preview">
+        <h2>Наши услуги</h2>
+        <p>Подробный список услуг доступен на <a href="services.html">отдельной странице</a>.</p>
+        <ul>
+            <li>Диагностика и ремонт аппаратной части</li>
+            <li>Установка и настройка программного обеспечения</li>
+            <li>Удаление вирусов и защита от угроз</li>
+            <li>Апгрейд компонентов (процессор, память, жесткий диск)</li>
+            <li>Консультации по выбору оборудования</li>
+        </ul>
+    </section>
+
+    <section id="testimonials">
+        <h2>Отзывы клиентов</h2>
+        <div class="testimonial">
+            <p>"Отличная работа! Мой ПК работает как новый."</p>
+            <cite>- Иван Иванов</cite>
+        </div>
+        <div class="testimonial">
+            <p>"Быстрая диагностика и качественный ремонт."</p>
+            <cite>- Мария Петрова</cite>
+        </div>
+        <!-- Заглушка для большего количества отзывов -->
+    </section>
+
+    <section id="contact">
+        <h2>Контакты</h2>
+        <a href="tel:+995591071526"><p>Телефон: +995 591 07 15 26</p></a>
+        <a href="mailto:pc.teamtbilisi@gmail.com"><p>Email: pc.teamtbilisi@gmail.com</p></a>
+        <a href="#"><p>Адрес: Пока нет места</p></a>
+        <p>График работы: Пн-Пт 9:00-18:00</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Команда по ремонту ПК. Все права защищены.</p>
+        <p><a href="#">Политика конфиденциальности</a> | <a href="#">Условия использования</a></p>
+    </footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Мобильное меню
+    const nav = document.querySelector('nav');
+    const menuToggle = document.createElement('div');
+    menuToggle.className = 'menu-toggle';
+    menuToggle.innerHTML = '<span></span><span></span><span></span>';
+    nav.appendChild(menuToggle);
+    
+    const navUl = nav.querySelector('ul');
+    
+    menuToggle.addEventListener('click', function() {
+        this.classList.toggle('active');
+        navUl.classList.toggle('show');
+    });
+    
+    // Закрытие меню при клике на ссылку
+    navUl.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function() {
+            menuToggle.classList.remove('active');
+            navUl.classList.remove('show');
+        });
+    });
+    
+    // Закрытие подсказок при клике вне карточки
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.price-card')) {
+            document.querySelectorAll('.price-card .details').forEach(detail => {
+                detail.style.opacity = '0';
+                detail.style.visibility = 'hidden';
+            });
+        }
+    });
+});
+</script>   
+</body>
+</html>
